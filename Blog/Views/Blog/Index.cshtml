@@ -1,14 +1,18 @@
-﻿@model List<string>
+﻿@using Blog.Models
+@model List<BlogEntry>
 
 
 <div>
-    @foreach(string post in @Model)
+    @foreach (BlogEntry post in @Model)
     {
         <div class=" card mb-2">
             <div class="card-body">
-                @Html.Raw(@post)
+                @Html.Raw(@post.Content)
             </div>
             
+            <div class="card-footer"> 
+                @Html.ActionLink("Edit", "CreatorPage", new {Id = post.Id})
+            </div>
         </div>
     }
 </div>
