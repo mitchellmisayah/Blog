@@ -1,0 +1,14 @@
+﻿@model List<string>
+
+
+<div>
+    @foreach(string post in @Model)
+    {
+        <div class=" card mb-2">
+            <div class="card-body">
+                @Html.Raw(@post)
+            </div>
+            
+        </div>
+    }
+</div>
